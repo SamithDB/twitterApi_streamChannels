@@ -23,9 +23,12 @@ tweetStream.on('tweet', function (tweet) {
 }); 
 */
 
+
+var srilanka = [ '79.6951668639', '5.96836985923', '81.7879590189', '9.82407766361' ]
+
 //  filter the twitter public stream by the word 'mango'.
 
-var stream = twitter.stream('statuses/filter', { track: 'mango' })
+var stream = twitter.stream('statuses/filter', { locations: srilanka , track: 'ganja'  })
  
 stream.on('tweet', function (tweet) {
   console.log('screen_name:', tweet.user.screen_name);
