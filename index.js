@@ -2,7 +2,12 @@ var nconf = require('nconf');
 var Twit = require('twit');
 var _ = require('lodash');
 
+var TwitterStreamChannels = require('twitter-stream-channels');
+
 nconf.file({ file: 'config.json' }).env(); // Twitter Consumer key & Access key
+
+var credentials = require('./config.json')
+var client = new TwitterStreamChannels(credentials);
 
 var twitter = new Twit({
   consumer_key: nconf.get('TWITTER_CONSUMER_KEY'),
@@ -21,19 +26,22 @@ tweetStream.on('tweet', function (tweet) {
   console.log('text:', tweet.text);
   
 }); 
-*/
 
+//-----------------------------------------------------------------------------------------------------------------
 
 var srilanka = [ '79.6951668639', '5.96836985923', '81.7879590189', '9.82407766361' ]
 
-//  filter the twitter public stream by the word 'mango'.
+//  filter the twitter public stream 
 
-var stream = twitter.stream('statuses/filter', { locations: srilanka , track: 'ganja'  })
+var stream = twitter.stream('statuses/filter', { track:['Apple','Mango'] })
  
 stream.on('tweet', function (tweet) {
   console.log('screen_name:', tweet.user.screen_name);
   console.log('text:', tweet.text);
   console.log('----------------------------------------');
 })
+*/
+
+//-----------------------------------------------------------------------------------------------------------------
 
 
