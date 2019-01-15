@@ -1,2 +1,2 @@
-# twetterApi_streamChannels
+# twitterApi_streamChannels
 Filter tweets using multiple keeywords
