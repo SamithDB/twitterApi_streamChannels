@@ -1,2 +1,2 @@
-# twetter_abusive_detection
-twitter abusive social media posts detector project
+# twetterApi_streamChannels
+Filter tweets using multiple keeywords
